@@ -66,7 +66,7 @@ export const RestaurantReviews: React.FC<RestaurantReviewsProps> = ({
               </div>
             </div>
             
-            <p className="text-gray-600 mt-2">{restaurant.address}</p>
+            <p className="text-gray-600 mt-2">{restaurant.addressDong}</p>
             
             <div className="mt-4">
               <h3 className="font-semibold text-gray-800">대표 메뉴</h3>
@@ -82,7 +82,7 @@ export const RestaurantReviews: React.FC<RestaurantReviewsProps> = ({
             
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">
-                {restaurant.tags.map((tag) => (
+                {restaurant.hashtags.map((tag) => (
                   <span
                     key={tag}
                     className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"

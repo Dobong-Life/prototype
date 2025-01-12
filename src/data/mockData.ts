@@ -27,7 +27,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['라멘', '소바', '초밥', '스시'],
     likes: 120,
     imageUrl: 'https://i.ibb.co/Jq1RTcK/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '3',
@@ -41,7 +41,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['우동', '어묵', '튀김'],
     likes: 98,
     imageUrl: 'https://i.ibb.co/r2TGZ3Z/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '4',
@@ -55,7 +55,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['덮밥', '텐동', '튀김'],
     likes: 75,
     imageUrl: 'https://i.ibb.co/2F21Fnq/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '5',
@@ -69,7 +69,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['에그타르트'],
     likes: 200,
     imageUrl: 'https://i.ibb.co/DfdRccr/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '6',
@@ -83,7 +83,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 145,
     imageUrl: 'https://i.ibb.co/4SnkvJx/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '7',
@@ -97,7 +97,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 130,
     imageUrl: 'https://i.ibb.co/yh9FK02/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '8',
@@ -111,7 +111,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['빵'],
     likes: 185,
     imageUrl: 'https://i.ibb.co/FKCmvZ1/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '9',
@@ -125,7 +125,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 95,
     imageUrl: 'https://i.ibb.co/swcsZDN/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '10',
@@ -139,7 +139,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 110,
     imageUrl: 'https://i.ibb.co/qkp1pLV/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '11',
@@ -153,7 +153,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 75,
     imageUrl: 'https://i.ibb.co/kJjRmvq/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '12',
@@ -167,7 +167,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 60,
     imageUrl: 'https://i.ibb.co/mz5Srx4/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '13',
@@ -181,7 +181,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 155,
     imageUrl: 'https://i.ibb.co/SPDYD0R/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '14',
@@ -195,7 +195,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 140,
     imageUrl: 'https://i.ibb.co/gDcdztf/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '15',
@@ -209,7 +209,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 170,
     imageUrl: 'https://i.ibb.co/WzPD8rz/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '16',
@@ -223,7 +223,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 130,
     imageUrl: 'https://i.ibb.co/nmhLpcJ/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '17',
@@ -237,7 +237,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 125,
     imageUrl: 'https://i.ibb.co/YhPjYKj/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '18',
@@ -251,7 +251,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 110,
     imageUrl: 'https://i.ibb.co/YhPjYKj/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '19',
@@ -265,7 +265,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 95,
     imageUrl: 'https://i.ibb.co/swZwqg0/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '20',
@@ -279,7 +279,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['부대찌개'],
     likes: 140,
     imageUrl: 'https://i.ibb.co/s264vVr/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '21',
@@ -293,7 +293,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['김치찌개'],
     likes: 125,
     imageUrl: 'https://i.ibb.co/wSSbFgL/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '22',
@@ -307,7 +307,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['순두부찌개', '수제비'],
     likes: 135,
     imageUrl: 'https://i.ibb.co/RDQzLfC/image.png',
-    mapUrl: null
+    mapUrl: undefined
   },
   {
     id: '23',
@@ -321,7 +321,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['순두부찌개'],
     likes: 115,
     imageUrl: 'https://i.ibb.co/924Zkgr/image.png',
-    mapUrl: null
+    mapUrl: undefined
   }
 ];
 
@@ -332,7 +332,7 @@ export const reviews: Review[] = [
     userId: 'user1',
     userName: '맛있는생활',
     comment: '정말 맛있게 먹었습니다. 서비스도 정말 친절해요',
-    imageUrl: 'https://images.unsplash.com/photo-1591735179859-a284530ef94d?w=800',
+    imageUrl: 'https://i.ibb.co/2PWq0NK/image.jpg',
     tags: ['맛있어요', '친절해요', '청결해요'],
     createdAt: '2024-03-15'
   }

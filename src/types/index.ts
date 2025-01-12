@@ -10,7 +10,7 @@ export interface Restaurant {
   mainMenu: string[];
   likes: number;
   imageUrl: string;
-  mapUrl: string | null;
+  mapUrl: string | undefined;
 }
 
 export interface Review {

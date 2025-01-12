@@ -14,8 +14,8 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({
   onViewReviews,
 }) => {
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-end justify-center">
-      <div className="bg-white w-full max-w-[390px] rounded-t-2xl">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[100] flex items-center justify-center">
+      <div className="bg-white w-full max-w-[390px] max-h-[80vh] rounded-xl overflow-y-auto m-4">
         <div className="relative h-64">
           <img
             src={restaurant.imageUrl}

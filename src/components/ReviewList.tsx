@@ -9,7 +9,7 @@ interface ReviewListProps {
 
 export const ReviewList: React.FC<ReviewListProps> = ({ reviews, onWriteReview }) => {
   return (
-    <div className="space-y-6">
+    <div className="pb-20 space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-bold text-gray-800">리뷰</h3>
         <button
