@@ -14,28 +14,27 @@ function App() {
   const [selectedGuide, setSelectedGuide] = useState<'restaurants' | 'business' | 'attractions' | null>(null);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [showReviews, setShowReviews] = useState(false);
-  const [activeTab, setActiveTab] = useState<'home' | 'food' | 'business' | 'place' | 'mypage'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'restaurants' | 'business' | 'attractions' | 'mypage'>('home');
 
   const handleViewReviews = (restaurantId: string) => {
     setShowReviews(true);
     setSelectedRestaurant(restaurants.find(r => r.id === restaurantId) || null);
   };
 
-  const handleTabChange = (tab: 'home' | 'food' | 'business' | 'place' | 'mypage') => {
+  const handleTabChange = (tab: 'home' | 'restaurants' | 'business' | 'attractions' | 'mypage') => {
     setActiveTab(tab);
     if (tab === 'home') {
       setSelectedGuide(null);
-    } else if (tab === 'food') {
+    } else if (tab === 'restaurants') {
       setSelectedGuide('restaurants');
     } else if (tab === 'business') {
       setSelectedGuide('business');
-    } else if (tab === 'place') {
+    } else if (tab === 'attractions') {
       setSelectedGuide('attractions');
     }
   };
 
   const handleFilterClick = () => {
-    // TODO: Implement filter modal
     console.log('Filter clicked');
   };
 
@@ -70,7 +69,7 @@ function App() {
                 icon={Utensils}
                 title="맛집 가이드"
                 description="도봉구의 숨은 맛집을 찾아보세요"
-                onClick={() => handleTabChange('food')}
+                onClick={() => handleTabChange('restaurants')}
               />
               
               <GuideButton
@@ -84,7 +83,7 @@ function App() {
                 icon={Landmark}
                 title="명소 가이드"
                 description="도봉구의 관광 명소를 둘러보세요"
-                onClick={() => handleTabChange('place')}
+                onClick={() => handleTabChange('attractions')}
               />
             </div>
           ) : selectedGuide === 'restaurants' ? (

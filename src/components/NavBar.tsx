@@ -2,16 +2,16 @@ import React from 'react';
 import { Home, Utensils, Briefcase, Landmark, User } from 'lucide-react';
 
 interface NavBarProps {
-  activeTab: 'home' | 'food' | 'business' | 'place' | 'mypage';
-  onTabChange: (tab: 'home' | 'food' | 'business' | 'place' | 'mypage') => void;
+  activeTab: 'home' | 'restaurants' | 'business' | 'attractions' | 'mypage';
+  onTabChange: (tab: 'home' | 'restaurants' | 'business' | 'attractions' | 'mypage') => void;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({ activeTab, onTabChange }) => {
   const navItems = [
     { id: 'home', label: '홈', icon: Home },
-    { id: 'food', label: '맛집가이드', icon: Utensils },
+    { id: 'restaurants', label: '맛집가이드', icon: Utensils },
     { id: 'business', label: '비즈니스가이드', icon: Briefcase },
-    { id: 'place', label: '명소가이드', icon: Landmark },
+    { id: 'attractions', label: '명소가이드', icon: Landmark },
     { id: 'mypage', label: '마이페이지', icon: User },
   ] as const;
 
