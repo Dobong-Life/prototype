@@ -1,4 +1,4 @@
-import { Restaurant, Review, Tag } from '../types';
+import { Restaurant, Review, Tag, Attraction } from '../types';
 
 export const restaurants: Restaurant[] = [
   {
@@ -13,7 +13,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['순대국밥'],
     likes: 156,
     imageUrl: 'https://i.ibb.co/CMz2dc4/food1.png',
-    mapUrl: 'https://map.naver.com/p/search/%EB%A7%88%EC%84%A0%EC%83%9D%EB%A7%88%EC%95%BD%EA%B5%AD%EB%B0%A5/place/1827020251?c=13.00,0,0,0,dh&placePath=/home'
+    mapUrl: 'https://m.place.naver.com/restaurant/1827020251/home'
   },
   {
     id: '2',
@@ -27,7 +27,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['라멘', '소바', '초밥', '스시'],
     likes: 120,
     imageUrl: 'https://i.ibb.co/Jq1RTcK/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '3',
@@ -41,7 +41,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['우동', '어묵', '튀김'],
     likes: 98,
     imageUrl: 'https://i.ibb.co/r2TGZ3Z/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '4',
@@ -55,7 +55,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['덮밥', '텐동', '튀김'],
     likes: 75,
     imageUrl: 'https://i.ibb.co/2F21Fnq/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '5',
@@ -69,7 +69,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['에그타르트'],
     likes: 200,
     imageUrl: 'https://i.ibb.co/DfdRccr/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '6',
@@ -83,7 +83,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 145,
     imageUrl: 'https://i.ibb.co/4SnkvJx/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '7',
@@ -97,7 +97,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 130,
     imageUrl: 'https://i.ibb.co/yh9FK02/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '8',
@@ -111,7 +111,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['빵'],
     likes: 185,
     imageUrl: 'https://i.ibb.co/FKCmvZ1/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '9',
@@ -125,7 +125,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 95,
     imageUrl: 'https://i.ibb.co/swcsZDN/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '10',
@@ -139,7 +139,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 110,
     imageUrl: 'https://i.ibb.co/qkp1pLV/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '11',
@@ -153,7 +153,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 75,
     imageUrl: 'https://i.ibb.co/kJjRmvq/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '12',
@@ -167,7 +167,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['커피'],
     likes: 60,
     imageUrl: 'https://i.ibb.co/mz5Srx4/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '13',
@@ -181,7 +181,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 155,
     imageUrl: 'https://i.ibb.co/SPDYD0R/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '14',
@@ -195,7 +195,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 140,
     imageUrl: 'https://i.ibb.co/gDcdztf/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '15',
@@ -209,7 +209,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 170,
     imageUrl: 'https://i.ibb.co/WzPD8rz/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '16',
@@ -223,7 +223,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['국밥'],
     likes: 130,
     imageUrl: 'https://i.ibb.co/nmhLpcJ/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '17',
@@ -237,7 +237,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 125,
     imageUrl: 'https://i.ibb.co/YhPjYKj/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '18',
@@ -251,7 +251,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 110,
     imageUrl: 'https://i.ibb.co/YhPjYKj/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '19',
@@ -265,7 +265,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['튀김', '떡볶이'],
     likes: 95,
     imageUrl: 'https://i.ibb.co/swZwqg0/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '20',
@@ -279,7 +279,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['부대찌개'],
     likes: 140,
     imageUrl: 'https://i.ibb.co/s264vVr/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '21',
@@ -293,7 +293,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['김치찌개'],
     likes: 125,
     imageUrl: 'https://i.ibb.co/wSSbFgL/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '22',
@@ -307,7 +307,7 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['순두부찌개', '수제비'],
     likes: 135,
     imageUrl: 'https://i.ibb.co/RDQzLfC/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   },
   {
     id: '23',
@@ -321,8 +321,152 @@ export const restaurants: Restaurant[] = [
     mainMenu: ['순두부찌개'],
     likes: 115,
     imageUrl: 'https://i.ibb.co/924Zkgr/image.png',
-    mapUrl: undefined
+    mapUrl: 'https://m.map.naver.com/'
   }
+];
+
+
+export const attractions: Attraction[] = [
+  {
+    id: '1',
+    name: '도봉산',
+    category: '산',
+    subcategory: '등산 코스',
+    tagCategory: '자연과 산책',
+    hashtags: ['산과 둘레길'],
+    addressDetail: null,
+    addressDong: '도봉동',
+    mainItem: ['산', '등산', '자연'],
+    likes: 234,
+    imageUrl: 'https://i.ibb.co/mzHDbtW/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '2',
+    name: '초안산하늘꽃정원',
+    category: '공원',
+    subcategory: '정원',
+    tagCategory: '자연과 산책',
+    hashtags: ['산과 둘레길', '공원'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['정원', '꽃', '산책'],
+    likes: 178,
+    imageUrl: 'https://i.ibb.co/BsbsRYm/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '3',
+    name: '당현천기억길',
+    category: '공원',
+    subcategory: '산책로',
+    tagCategory: '자연과 산책',
+    hashtags: ['산과 둘레길', '공원'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['산책로', '추억', '자연'],
+    likes: 150,
+    imageUrl: 'https://i.ibb.co/BKdvwxt/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '4',
+    name: '발바닥공원',
+    category: '공원',
+    subcategory: '놀이공원',
+    tagCategory: '자연과 산책',
+    hashtags: ['산과 둘레길', '공원'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['공원', '산책', '놀이'],
+    likes: 112,
+    imageUrl: 'https://i.ibb.co/Lvkx8T7/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '5',
+    name: '서울창포원',
+    category: '관광명소',
+    subcategory: '자연',
+    tagCategory: '자연과 산책',
+    hashtags: ['공원'],
+    addressDetail: null,
+    addressDong: '도봉동',
+    mainItem: ['붓꽃', '습지원'],
+    likes: 95,
+    imageUrl: 'https://i.ibb.co/710mzwc/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '6',
+    name: '도봉관',
+    category: '카페/디저트',
+    subcategory: '커피',
+    tagCategory: '가벼운 외출',
+    hashtags: ['골목길 카페 탐방'],
+    addressDetail: null,
+    addressDong: '도봉동',
+    mainItem: ['카페', '분위기'],
+    likes: 134,
+    imageUrl: 'https://i.ibb.co/swcsZDN/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '7',
+    name: '카페더로비',
+    category: '카페/디저트',
+    subcategory: '커피',
+    tagCategory: '가벼운 외출',
+    hashtags: ['골목길 카페 탐방'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['카페', '음료', '휴식'],
+    likes: 102,
+    imageUrl: 'https://i.ibb.co/qkp1pLV/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '8',
+    name: '딥코프커피',
+    category: '카페/디저트',
+    subcategory: '빵',
+    tagCategory: '가벼운 외출',
+    hashtags: ['골목길 카페 탐방'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['커피', '조용한', '디저트'],
+    likes: 98,
+    imageUrl: 'https://i.ibb.co/kJjRmvq/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '9',
+    name: '카페도영',
+    category: '카페/디저트',
+    subcategory: '커피',
+    tagCategory: '가벼운 외출',
+    hashtags: ['골목길 카페 탐방'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['카페', '커피', '디저트'],
+    likes: 89,
+    imageUrl: 'https://i.ibb.co/mz5Srx4/image.png',
+    mapUrl: undefined,
+  },
+  {
+    id: '10',
+    name: '방학동도깨비시장',
+    category: '시장',
+    subcategory: '전통시장',
+    tagCategory: '가벼운 외출',
+    hashtags: ['지역 전통시장 구경'],
+    addressDetail: null,
+    addressDong: '도봉동',
+    mainItem: ['전통시장', '먹거리', '쇼핑'],
+    likes: 120,
+    imageUrl: 'https://i.ibb.co/q5GPfPR/image.png',
+    mapUrl: undefined,
+  },
 ];
 
 export const reviews: Review[] = [
