@@ -11,6 +11,7 @@ import { AttractionList } from './components/AttractionList';
 import { AttractionModal } from './components/AttractionModal';
 import { restaurants, attractions } from './data/mockData';
 import { Restaurant, Attraction } from './types';
+import { AttractionReviews } from './pages/AttractionReviews';
 
 function App() {
   const [selectedGuide, setSelectedGuide] = useState<'restaurants' | 'business' | 'attractions' | null>(null);
@@ -23,11 +24,11 @@ function App() {
     if (type === 'restaurant') {
       setShowReviews(true);
       setSelectedRestaurant(restaurants.find(r => r.id === id) || null);
-    } else {
-      console.log(`리뷰 보기: Attraction ID ${id}`);
+    } else if (type === 'attraction') {
+      setShowReviews(true); // 상태 업데이트 추가
       setSelectedAttraction(attractions.find(a => a.id === id) || null);
     }
-  };
+  };  
 
   const handleTabChange = (tab: 'home' | 'restaurants' | 'business' | 'attractions' | 'mypage') => {
     setActiveTab(tab);
@@ -56,6 +57,21 @@ function App() {
           onBack={() => {
             setShowReviews(false);
             setSelectedRestaurant(null);
+          }}
+        />
+        <NavBar activeTab={activeTab} onTabChange={handleTabChange} />
+      </>
+    );
+  }
+
+  if (showReviews && selectedAttraction) { // AttractionReviews 렌더링 조건 추가
+    return (
+      <>
+        <AttractionReviews
+          attraction={selectedAttraction}
+          onBack={() => {
+            setShowReviews(false);
+            setSelectedAttraction(null);
           }}
         />
         <NavBar activeTab={activeTab} onTabChange={handleTabChange} />
