@@ -537,7 +537,7 @@ export const businesses: Business[] = [
     addressDong: '창동',
     mainItem: ['화장품 기술 개발', '의료 IT 솔루션'],
     likes: 95,
-    imageUrl: 'https://i.ibb.co/bm72SJw/image.png',
+    imageUrl: 'https://i.ibb.co/18X3Sys/111.jpg',
     mapUrl: 'https://m.place.naver.com/place/1283730977/home',
   },
 ];

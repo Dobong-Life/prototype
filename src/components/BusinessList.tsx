@@ -11,26 +11,24 @@ export const BusinessList: React.FC<BusinessListProps> = ({
   businesses,
   onBusinessClick,
 }) => {
-  const groupedByHashtags = businesses.reduce((acc, business) => {
-    business.hashtags.forEach((hashtag) => {
-      if (!acc[hashtag]) {
-        acc[hashtag] = [];
-      }
-      acc[hashtag].push(business);
-    });
+  // Group businesses by tagCategory
+  const groupedByTagCategory = businesses.reduce((acc, business) => {
+    if (!acc[business.tagCategory]) {
+      acc[business.tagCategory] = [];
+    }
+    acc[business.tagCategory].push(business);
     return acc;
   }, {} as Record<string, Business[]>);
 
   return (
     <div className="space-y-8">
-      {Object.entries(groupedByHashtags).map(([hashtag, businesses]) => (
-        <div key={hashtag}>
+      {Object.entries(groupedByTagCategory).map(([tagCategory, group]) => (
+        <div key={tagCategory}>
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-semibold text-gray-800">#{hashtag}</h3>
-            <button className="text-sm text-gray-600">더보기</button>
+            <h3 className="font-semibold text-gray-800">{tagCategory}</h3>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {businesses.slice(0, 4).map((business) => (
+            {group.map((business) => (
               <BusinessCard
                 key={business.id}
                 business={business}
