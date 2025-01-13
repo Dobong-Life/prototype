@@ -120,10 +120,20 @@ function App() {
         <main className="pt-14 px-4 pb-8">
           {activeTab === "home" && !selectedGuide ? (
             <div className="space-y-4 pt-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                도봉구의 모든 것
-              </h2>
-
+              <img
+                src="/logo.png"
+                alt="Dobong Life"
+                className="h-16 algin-center mx-auto mb-4"
+              />
+              <div className="text-center">
+                <p className="text-xl text-gray-800 mb-2">
+                  도봉에서 만나요, 도봉 라이프!
+                </p>
+                <p className="text-l text-gray-800 mb-2">
+                  도봉구의 <span className="font-bold">숨은 매력</span>부터{" "}
+                  <span className="font-bold">할인 쿠폰</span>까지!
+                </p>
+              </div>
               <GuideButton
                 icon={Utensils}
                 title="맛집 가이드"
