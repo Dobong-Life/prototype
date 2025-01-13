@@ -30,7 +30,8 @@ export type Attraction = {
 
 export interface Review {
   id: string;
-  restaurantId: string;
+  restaurantId?: string;
+  attractionId?: string;
   userId: string;
   userName: string;
   comment: string;

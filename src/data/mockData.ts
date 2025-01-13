@@ -521,6 +521,26 @@ export const reviews: Review[] = [
     imageUrl: 'https://i.ibb.co/2PWq0NK/image.jpg',
     tags: ['맛있어요', '친절해요', '청결해요'],
     createdAt: '2024-03-15'
+  },
+  {
+    id: '2',
+    attractionId: '1', // Attraction 리뷰 추가
+    userId: 'user2',
+    userName: '산책러버',
+    comment: '도봉산 정말 멋진 곳이에요! 등산하기 좋습니다.',
+    imageUrl: 'https://i.ibb.co/RDt3Z6f/image.jpg',
+    tags: ['멋진 풍경', '추천해요', '등산하기 좋아요'],
+    createdAt: '2024-04-01'
+  },
+  {
+    id: '3',
+    attractionId: '2', // Attraction 리뷰 추가
+    userId: 'user3',
+    userName: '꽃사랑이',
+    comment: '초안산 하늘꽃정원 너무 예쁘네요. 가족과 함께 즐겼습니다.',
+    imageUrl: 'https://i.ibb.co/q7HcLkz/image.jpg',
+    tags: ['꽃이 예뻐요', '가족 추천', '산책로가 좋아요'],
+    createdAt: '2024-04-02'
   }
 ];
 
