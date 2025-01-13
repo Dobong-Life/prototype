@@ -28,6 +28,22 @@ export type Attraction = {
   mapUrl?: string;
 };
 
+export interface Business {
+  id: string;
+  name: string;
+  category: string;
+  subcategory: string;
+  tagCategory: string;
+  hashtags: string[];
+  addressDetail: string | null;
+  addressDong: string;
+  mainItem: string[];
+  likes: number;
+  imageUrl: string;
+  mapUrl?: string;
+}
+
+
 export interface Review {
   id: string;
   restaurantId?: string;

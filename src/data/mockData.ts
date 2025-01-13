@@ -1,4 +1,4 @@
-import { Restaurant, Review, Tag, Attraction } from '../types';
+import { Restaurant, Review, Tag, Attraction, Business } from '../types';
 
 export const restaurants: Restaurant[] = [
   {
@@ -508,6 +508,37 @@ export const attractions: Attraction[] = [
     likes: 85,
     imageUrl: 'https://i.ibb.co/LJx51Jn/image.png',
     mapUrl: 'https://m.map.naver.com/',
+  },
+];
+
+export const businesses: Business[] = [
+  {
+    id: '1',
+    name: '도봉구 상공회',
+    category: '경제 단체',
+    subcategory: '지역 상공회',
+    tagCategory: '도봉구의 자랑',
+    hashtags: ['지역 경제 활성화', '상공인 네트워크'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['지역 경제 협력', '상공인 지원'],
+    likes: 120,
+    imageUrl: 'https://i.ibb.co/yqJJLGb/image.jpg',
+    mapUrl: 'https://m.place.naver.com/place/21080054/home',
+  },
+  {
+    id: '2',
+    name: '유머스트알엔디',
+    category: '연구개발 기업',
+    subcategory: '화장품/의료기기',
+    tagCategory: '도봉구의 자랑',
+    hashtags: ['화장품 연구 개발', '의료기기', '의료IT'],
+    addressDetail: null,
+    addressDong: '창동',
+    mainItem: ['화장품 기술 개발', '의료 IT 솔루션'],
+    likes: 95,
+    imageUrl: 'https://i.ibb.co/bm72SJw/image.png',
+    mapUrl: 'https://m.place.naver.com/place/1283730977/home',
   },
 ];
 
