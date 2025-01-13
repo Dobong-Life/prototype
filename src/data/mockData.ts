@@ -572,7 +572,27 @@ export const reviews: Review[] = [
     imageUrl: 'https://i.ibb.co/Kj6Stnb/dobongreview2.jpg',
     tags: ['꽃이 예뻐요', '가족 추천', '산책로가 좋아요'],
     createdAt: '2024-04-02'
-  }
+  },
+  {
+    id: '4',
+    businessId: '1', // Business 리뷰 추가
+    userId: 'user4',
+    userName: '지공이',
+    comment: '도봉구 상공회는 지역 상공인들에게 큰 도움을 주는 기관이에요.',
+    imageUrl: 'https://i.ibb.co/KVXjRgs/1.jpg',
+    tags: ['지역 경제 활성화', '친절한 지원', '상공인 추천'],
+    createdAt: '2024-04-10',
+  },
+  {
+    id: '5',
+    businessId: '2', // Business 리뷰 추가
+    userId: 'user5',
+    userName: '알뷰티',
+    comment: '믿고 쓰는 유머스트알엔디 화장품, 로사미에!',
+    imageUrl: 'https://i.ibb.co/1KSm8L4/2.jpg',
+    tags: ['화장품 연구', '기술력', '방문 추천'],
+    createdAt: '2024-04-12',
+  },
 ];
 
 export const popularTags: Tag[] = [

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowLeft, Heart, Map } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Business } from "../types";
 import { ReviewList } from "../components/ReviewList";
 import { WriteReview } from "../components/WriteReview";
@@ -22,7 +22,6 @@ export const BusinessReviews: React.FC<BusinessReviewsProps> = ({
     tags: string[];
     image?: File;
   }) => {
-    // Backend로 리뷰를 전송하는 로직 추가
     console.log("새로운 리뷰:", review);
     setShowWriteReview(false);
   };
@@ -58,34 +57,8 @@ export const BusinessReviews: React.FC<BusinessReviewsProps> = ({
               <h2 className="text-2xl font-bold text-gray-800">
                 {business.name}
               </h2>
-              <div className="flex gap-2">
-                <button className="p-2 bg-gray-100 rounded-full">
-                  <Heart className="w-6 h-6 text-red-500" />
-                </button>
-                {business.mapUrl && (
-                  <button
-                    onClick={() => window.open(business.mapUrl, "_blank")}
-                    className="p-2 bg-gray-100 rounded-full"
-                  >
-                    <Map className="w-6 h-6 text-blue-500" />
-                  </button>
-                )}
-              </div>
             </div>
-
             <p className="text-gray-600 mt-2">{business.addressDong}</p>
-
-            <div className="mt-4">
-              <h3 className="font-semibold text-gray-800">주요 항목</h3>
-              <div className="mt-2 space-y-2">
-                {business.mainItem.map((item) => (
-                  <div key={item} className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
-                    <span className="text-gray-600">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">

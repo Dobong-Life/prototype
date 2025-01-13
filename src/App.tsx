@@ -32,7 +32,10 @@ function App() {
     "home" | "restaurants" | "business" | "attractions" | "mypage"
   >("home");
 
-  const handleViewReviews = (id: string, type: "restaurant" | "attraction" | "business") => {
+  const handleViewReviews = (
+    id: string,
+    type: "restaurant" | "attraction" | "business"
+  ) => {
     if (type === "restaurant") {
       setShowReviews(true);
       setSelectedRestaurant(restaurants.find((r) => r.id === id) || null);
@@ -108,7 +111,6 @@ function App() {
       />
     );
   }
-  
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -228,6 +230,15 @@ function App() {
             onViewReviews={(id) => handleViewReviews(id, "business")}
           />
         )}
+        {selectedBusiness && showReviews ? (
+          <BusinessReviews
+            business={selectedBusiness}
+            onBack={() => {
+              setShowReviews(false);
+              setSelectedBusiness(null);
+            }}
+          />
+        ) : null}
 
         <NavBar activeTab={activeTab} onTabChange={handleTabChange} />
       </div>
