@@ -13,6 +13,21 @@ export interface Restaurant {
   mapUrl: string | undefined;
 }
 
+export type Attraction = {
+  id: string;
+  name: string;
+  category: string;
+  subcategory: string;
+  tagCategory: string;
+  hashtags: string[];
+  addressDetail: string | null;
+  addressDong: string;
+  mainItem: string[];
+  likes: number;
+  imageUrl: string;
+  mapUrl?: string;
+};
+
 export interface Review {
   id: string;
   restaurantId: string;

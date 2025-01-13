@@ -9,6 +9,7 @@ import { RestaurantModal } from './components/RestaurantModal';
 import { RestaurantReviews } from './pages/RestaurantReviews';
 import { restaurants } from './data/mockData';
 import { Restaurant } from './types';
+import { AttractionsPage } from './pages/AttractionsPage';
 
 function App() {
   const [selectedGuide, setSelectedGuide] = useState<'restaurants' | 'business' | 'attractions' | null>(null);
@@ -103,6 +104,21 @@ function App() {
                 onRestaurantClick={setSelectedRestaurant}
               />
               
+              <FilterButton onClick={handleFilterClick} />
+            </div>
+          ) : selectedGuide === 'attractions' ? (
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-800">명소 가이드</h2>
+                <button
+                  onClick={() => handleTabChange('home')}
+                  className="text-sm text-gray-600"
+                >
+                  뒤로가기
+                </button>
+              </div>
+              
+              <AttractionsPage />
               <FilterButton onClick={handleFilterClick} />
             </div>
           ) : (
