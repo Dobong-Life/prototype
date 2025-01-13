@@ -31,6 +31,7 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
         </div>
 
         <div className="p-6">
+          {/* Title and Actions */}
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold text-gray-800">
               {attraction.name}
@@ -41,28 +42,30 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
               </button>
               {attraction.mapUrl ? (
                 <button
-                  className="p-2 bg-gray-100 rounded-full"
                   onClick={() => window.open(attraction.mapUrl, "_blank")}
+                  className="p-2 bg-gray-100 rounded-full"
                 >
                   <Map className="w-6 h-6 text-blue-500" />
                 </button>
               ) : (
                 <button
-                  className="p-2 bg-gray-100 rounded-full"
                   onClick={() => alert("지도 정보가 등록되지 않았습니다.")}
+                  className="p-2 bg-gray-100 rounded-full"
                 >
-                  <Map className="w-6 h-6 text-grey-500" />
+                  <Map className="w-6 h-6 text-gray-500" />
                 </button>
               )}
             </div>
           </div>
 
+          {/* Address */}
           <p className="text-gray-600 mt-2">
             {attraction.addressDetail
               ? attraction.addressDetail
               : `${attraction.addressDong} (상세 주소 미등록)`}
           </p>
 
+          {/* Main Items */}
           <div className="mt-6">
             <h3 className="font-semibold text-gray-800">주요 특징</h3>
             <div className="mt-2 space-y-2">
@@ -75,6 +78,7 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
             </div>
           </div>
 
+          {/* Tags */}
           <div className="mt-6">
             <h3 className="font-semibold text-gray-800">태그</h3>
             <div className="flex flex-wrap gap-2 mt-2">
@@ -89,13 +93,9 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
             </div>
           </div>
 
+          {/* Review Button */}
           <button
-            onClick={
-              () =>
-                onViewReviews
-                  ? onViewReviews(attraction.id) // 리뷰 페이지로 이동
-                  : alert("리뷰 페이지가 준비되지 않았습니다.") // 기본 동작
-            }
+            onClick={() => onViewReviews(attraction.id)}
             className="w-full mt-6 py-3 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-5 h-5" />

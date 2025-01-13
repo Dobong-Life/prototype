@@ -44,3 +44,4 @@ export const AttractionList: React.FC<AttractionListProps> = ({
     </div>
   );
 };
+  

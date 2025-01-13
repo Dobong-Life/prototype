@@ -3,7 +3,7 @@ import { attractions } from "../data/mockData";
 
 import { AttractionModal } from "../components/AttractionModal";
 import { Attraction } from "../types";
-import { AttractionList } from "../components/AttractionsList";
+import { AttractionList } from "../components/AttractionList";
 
 export const AttractionsPage: React.FC = () => {
   const [selectedAttraction, setSelectedAttraction] =

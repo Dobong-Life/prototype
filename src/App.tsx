@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Utensils, Briefcase, Landmark } from 'lucide-react';
+import { Utensils, Briefcase, Landmark, } from 'lucide-react';
 import { Header } from './components/Header';
 import { NavBar } from './components/NavBar';
 import { GuideButton } from './components/GuideButton';
@@ -7,19 +7,26 @@ import { RestaurantList } from './components/RestaurantList';
 import { FilterButton } from './components/FilterButton';
 import { RestaurantModal } from './components/RestaurantModal';
 import { RestaurantReviews } from './pages/RestaurantReviews';
-import { restaurants } from './data/mockData';
-import { Restaurant } from './types';
-import { AttractionsPage } from './pages/AttractionsPage';
+import { AttractionList } from './components/AttractionList';
+import { AttractionModal } from './components/AttractionModal';
+import { restaurants, attractions } from './data/mockData';
+import { Restaurant, Attraction } from './types';
 
 function App() {
   const [selectedGuide, setSelectedGuide] = useState<'restaurants' | 'business' | 'attractions' | null>(null);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [selectedAttraction, setSelectedAttraction] = useState<Attraction | null>(null);
   const [showReviews, setShowReviews] = useState(false);
   const [activeTab, setActiveTab] = useState<'home' | 'restaurants' | 'business' | 'attractions' | 'mypage'>('home');
 
-  const handleViewReviews = (restaurantId: string) => {
-    setShowReviews(true);
-    setSelectedRestaurant(restaurants.find(r => r.id === restaurantId) || null);
+  const handleViewReviews = (id: string, type: 'restaurant' | 'attraction') => {
+    if (type === 'restaurant') {
+      setShowReviews(true);
+      setSelectedRestaurant(restaurants.find(r => r.id === id) || null);
+    } else {
+      console.log(`리뷰 보기: Attraction ID ${id}`);
+      setSelectedAttraction(attractions.find(a => a.id === id) || null);
+    }
   };
 
   const handleTabChange = (tab: 'home' | 'restaurants' | 'business' | 'attractions' | 'mypage') => {
@@ -32,6 +39,8 @@ function App() {
       setSelectedGuide('business');
     } else if (tab === 'attractions') {
       setSelectedGuide('attractions');
+    } else if (tab === 'mypage') {
+      setSelectedGuide(null);
     }
   };
 
@@ -60,11 +69,9 @@ function App() {
         <Header onLogoClick={() => handleTabChange('home')} />
         
         <main className="pt-14 px-4 pb-8">
-          {!selectedGuide ? (
+          {activeTab === 'home' && !selectedGuide ? (
             <div className="space-y-4 pt-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                도봉구의 모든 것
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">도봉구의 모든 것</h2>
               
               <GuideButton
                 icon={Utensils}
@@ -87,7 +94,7 @@ function App() {
                 onClick={() => handleTabChange('attractions')}
               />
             </div>
-          ) : selectedGuide === 'restaurants' ? (
+          ) : activeTab === 'restaurants' && selectedGuide === 'restaurants' ? (
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-gray-800">맛집 가이드</h2>
@@ -106,7 +113,7 @@ function App() {
               
               <FilterButton onClick={handleFilterClick} />
             </div>
-          ) : selectedGuide === 'attractions' ? (
+          ) : activeTab === 'attractions' && selectedGuide === 'attractions' ? (
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-gray-800">명소 가이드</h2>
@@ -118,8 +125,15 @@ function App() {
                 </button>
               </div>
               
-              <AttractionsPage />
+              <AttractionList
+                attractions={attractions}
+                onAttractionClick={setSelectedAttraction}
+              />
               <FilterButton onClick={handleFilterClick} />
+            </div>
+          ) : activeTab === 'mypage' ? (
+            <div className="flex items-center justify-center h-[80vh]">
+              <p className="text-gray-500">Coming soon...</p>
             </div>
           ) : (
             <div className="flex items-center justify-center h-[80vh]">
@@ -127,12 +141,20 @@ function App() {
             </div>
           )}
         </main>
-        
+
         {selectedRestaurant && !showReviews && (
           <RestaurantModal
             restaurant={selectedRestaurant}
             onClose={() => setSelectedRestaurant(null)}
-            onViewReviews={handleViewReviews}
+            onViewReviews={(id) => handleViewReviews(id, 'restaurant')}
+          />
+        )}
+
+        {selectedAttraction && (
+          <AttractionModal
+            attraction={selectedAttraction}
+            onClose={() => setSelectedAttraction(null)}
+            onViewReviews={(id) => handleViewReviews(id, 'attraction')}
           />
         )}
 
