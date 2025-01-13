@@ -339,7 +339,7 @@ export const attractions: Attraction[] = [
     mainItem: ['산', '등산', '자연'],
     likes: 234,
     imageUrl: 'https://i.ibb.co/mzHDbtW/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '2',
@@ -353,7 +353,7 @@ export const attractions: Attraction[] = [
     mainItem: ['정원', '꽃', '산책'],
     likes: 178,
     imageUrl: 'https://i.ibb.co/BsbsRYm/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '3',
@@ -367,7 +367,7 @@ export const attractions: Attraction[] = [
     mainItem: ['산책로', '추억', '자연'],
     likes: 150,
     imageUrl: 'https://i.ibb.co/BKdvwxt/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '4',
@@ -381,7 +381,7 @@ export const attractions: Attraction[] = [
     mainItem: ['공원', '산책', '놀이'],
     likes: 112,
     imageUrl: 'https://i.ibb.co/Lvkx8T7/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '5',
@@ -395,7 +395,7 @@ export const attractions: Attraction[] = [
     mainItem: ['붓꽃', '습지원'],
     likes: 95,
     imageUrl: 'https://i.ibb.co/710mzwc/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '6',
@@ -409,7 +409,7 @@ export const attractions: Attraction[] = [
     mainItem: ['카페', '분위기'],
     likes: 134,
     imageUrl: 'https://i.ibb.co/swcsZDN/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '7',
@@ -423,7 +423,7 @@ export const attractions: Attraction[] = [
     mainItem: ['카페', '음료', '휴식'],
     likes: 102,
     imageUrl: 'https://i.ibb.co/qkp1pLV/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '8',
@@ -437,7 +437,7 @@ export const attractions: Attraction[] = [
     mainItem: ['커피', '조용한', '디저트'],
     likes: 98,
     imageUrl: 'https://i.ibb.co/kJjRmvq/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '9',
@@ -451,7 +451,7 @@ export const attractions: Attraction[] = [
     mainItem: ['카페', '커피', '디저트'],
     likes: 89,
     imageUrl: 'https://i.ibb.co/mz5Srx4/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
   {
     id: '10',
@@ -465,7 +465,7 @@ export const attractions: Attraction[] = [
     mainItem: ['전통시장', '먹거리', '쇼핑'],
     likes: 120,
     imageUrl: 'https://i.ibb.co/q5GPfPR/image.png',
-    mapUrl: undefined,
+    mapUrl: 'https://m.map.naver.com/',
   },
 ];
 
