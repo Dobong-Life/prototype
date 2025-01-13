@@ -9,9 +9,9 @@ interface NavBarProps {
 export const NavBar: React.FC<NavBarProps> = ({ activeTab, onTabChange }) => {
   const navItems = [
     { id: 'home', label: '홈', icon: Home },
-    { id: 'restaurants', label: '맛집가이드', icon: Utensils },
-    { id: 'business', label: '비즈니스가이드', icon: Briefcase },
-    { id: 'attractions', label: '명소가이드', icon: Landmark },
+    { id: 'restaurants', label: '맛집', icon: Utensils },
+    { id: 'business', label: '비즈니스', icon: Briefcase },
+    { id: 'attractions', label: '명소', icon: Landmark },
     { id: 'mypage', label: '마이페이지', icon: User },
   ] as const;
 
