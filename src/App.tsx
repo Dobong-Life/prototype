@@ -135,124 +135,129 @@ function App() {
                 </p>
               </div>
               <GuideButton
-                icon={Utensils}
-                title="맛집 가이드"
-                description="도봉구의 숨은 맛집을 찾아보세요"
+                imageSrc="/restaurant-guide.png"
+                altText="맛집 가이드"
                 onClick={() => handleTabChange("restaurants")}
               />
 
               <GuideButton
-                icon={Briefcase}
-                title="비즈니스 가이드"
-                description="지역 비즈니스 정보를 확인하세요"
+                imageSrc="/business-guide.png"
+                altText="비즈니스 가이드"
                 onClick={() => handleTabChange("business")}
               />
 
               <GuideButton
-                icon={Landmark}
-                title="명소 가이드"
-                description="도봉구의 관광 명소를 둘러보세요"
+                imageSrc="/attractoin-guide.png"
+                altText="명소 가이드"
                 onClick={() => handleTabChange("attractions")}
               />
             </div>
-          ) : activeTab === "restaurants" && selectedGuide === "restaurants" ? (
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-800">맛집 가이드</h2>
-                <button
-                  onClick={() => handleTabChange("home")}
-                  className="text-sm text-gray-600"
-                >
-                  뒤로가기
-                </button>
-              </div>
+      ) : activeTab === "restaurants" && selectedGuide === "restaurants" ? (
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-gray-800">맛집 가이드</h2>
+          <button
+            onClick={() => handleTabChange("home")}
+            className="text-sm text-gray-600"
+          >
+            뒤로가기
+          </button>
+        </div>
 
-              <RestaurantList
-                restaurants={restaurants}
-                onRestaurantClick={setSelectedRestaurant}
-              />
+        <RestaurantList
+          restaurants={restaurants}
+          onRestaurantClick={setSelectedRestaurant}
+        />
 
-              <FilterButton onClick={handleFilterClick} />
-            </div>
-          ) : activeTab === "attractions" && selectedGuide === "attractions" ? (
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-800">명소 가이드</h2>
-                <button
-                  onClick={() => handleTabChange("home")}
-                  className="text-sm text-gray-600"
-                >
-                  뒤로가기
-                </button>
-              </div>
-
-              <AttractionList
-                attractions={attractions}
-                onAttractionClick={setSelectedAttraction}
-              />
-              <FilterButton onClick={handleFilterClick} />
-            </div>
-          ) : activeTab === "mypage" ? (
-            <div className="flex items-center justify-center h-[80vh]">
-              <p className="text-gray-500">Coming soon...</p>
-            </div>
-          ) : activeTab === "business" && selectedGuide === "business" ? (
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-800">
-                  비즈니스 가이드
-                </h2>
-                <button
-                  onClick={() => handleTabChange("home")}
-                  className="text-sm text-gray-600"
-                >
-                  뒤로가기
-                </button>
-              </div>
-              <BusinessList
-                businesses={businesses}
-                onBusinessClick={setSelectedBusiness}
-              />
-            </div>
-          ) : null}
-        </main>
-
-        {selectedRestaurant && !showReviews && (
-          <RestaurantModal
-            restaurant={selectedRestaurant}
-            onClose={() => setSelectedRestaurant(null)}
-            onViewReviews={(id) => handleViewReviews(id, "restaurant")}
-          />
-        )}
-
-        {selectedAttraction && (
-          <AttractionModal
-            attraction={selectedAttraction}
-            onClose={() => setSelectedAttraction(null)}
-            onViewReviews={(id) => handleViewReviews(id, "attraction")}
-          />
-        )}
-
-        {selectedBusiness && (
-          <BusinessModal
-            business={selectedBusiness}
-            onClose={() => setSelectedBusiness(null)}
-            onViewReviews={(id) => handleViewReviews(id, "business")}
-          />
-        )}
-        {selectedBusiness && showReviews ? (
-          <BusinessReviews
-            business={selectedBusiness}
-            onBack={() => {
-              setShowReviews(false);
-              setSelectedBusiness(null);
-            }}
-          />
-        ) : null}
-
-        <NavBar activeTab={activeTab} onTabChange={handleTabChange} />
+        <FilterButton onClick={handleFilterClick} />
       </div>
-    </div>
+      ) : activeTab === "attractions" && selectedGuide === "attractions" ? (
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-gray-800">명소 가이드</h2>
+          <button
+            onClick={() => handleTabChange("home")}
+            className="text-sm text-gray-600"
+          >
+            뒤로가기
+          </button>
+        </div>
+
+        <AttractionList
+          attractions={attractions}
+          onAttractionClick={setSelectedAttraction}
+        />
+        <FilterButton onClick={handleFilterClick} />
+      </div>
+      ) : activeTab === "mypage" ? (
+      <div className="flex items-center justify-center h-[80vh]">
+        <p className="text-gray-500">Coming soon...</p>
+      </div>
+      ) : activeTab === "business" && selectedGuide === "business" ? (
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-gray-800">
+            비즈니스 가이드
+          </h2>
+          <button
+            onClick={() => handleTabChange("home")}
+            className="text-sm text-gray-600"
+          >
+            뒤로가기
+          </button>
+        </div>
+        <BusinessList
+          businesses={businesses}
+          onBusinessClick={setSelectedBusiness}
+        />
+      </div>
+          ) : null}
+    </main>
+
+        {
+    selectedRestaurant && !showReviews && (
+      <RestaurantModal
+        restaurant={selectedRestaurant}
+        onClose={() => setSelectedRestaurant(null)}
+        onViewReviews={(id) => handleViewReviews(id, "restaurant")}
+      />
+    )
+  }
+
+  {
+    selectedAttraction && (
+      <AttractionModal
+        attraction={selectedAttraction}
+        onClose={() => setSelectedAttraction(null)}
+        onViewReviews={(id) => handleViewReviews(id, "attraction")}
+      />
+    )
+  }
+
+  {
+    selectedBusiness && (
+      <BusinessModal
+        business={selectedBusiness}
+        onClose={() => setSelectedBusiness(null)}
+        onViewReviews={(id) => handleViewReviews(id, "business")}
+      />
+    )
+  }
+  {
+    selectedBusiness && showReviews ? (
+      <BusinessReviews
+        business={selectedBusiness}
+        onBack={() => {
+          setShowReviews(false);
+          setSelectedBusiness(null);
+        }}
+      />
+    ) : null
+  }
+
+  <NavBar activeTab={activeTab} onTabChange={handleTabChange} />
+      </div >
+    </div >
   );
 }
 

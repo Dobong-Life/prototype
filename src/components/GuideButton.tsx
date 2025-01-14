@@ -1,31 +1,26 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
 
 interface GuideButtonProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  onClick: () => void;
+  imageSrc: string; // 버튼의 배경 이미지 경로
+  altText: string; // 접근성을 위한 이미지 설명
+  onClick: () => void; // 클릭 이벤트 핸들러
 }
 
 export const GuideButton: React.FC<GuideButtonProps> = ({
-  icon: Icon,
-  title,
-  description,
+  imageSrc,
+  altText,
   onClick,
 }) => {
   return (
     <button
       onClick={onClick}
-      className="w-full bg-white rounded-xl shadow-md p-4 flex items-center space-x-4 hover:bg-gray-50 transition-colors"
+      className="relative h-40 w-full flex justify-center items-center rounded-xl shadow-md overflow-hidden focus:outline-none transition-transform"
     >
-      <div className="flex-shrink-0">
-        <Icon className="w-8 h-8 text-gray-600" />
-      </div>
-      <div className="flex-1 text-left">
-        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-        <p className="text-sm text-gray-500">{description}</p>
-      </div>
+      <img
+        src={imageSrc}
+        alt={altText}
+        className="w-full h-full object-cover"
+      />
     </button>
   );
 };
