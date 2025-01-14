@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { X, Heart, Map, MessageCircle } from "lucide-react";
 import { Attraction } from "../types";
 
@@ -13,6 +13,12 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
   onClose,
   onViewReviews,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeToggle = () => {
+    setIsLiked((prev) => !prev);
+  };
+
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[100] flex items-center justify-center">
       <div className="bg-white w-full max-w-[390px] max-h-[80vh] rounded-xl overflow-y-auto m-4">
@@ -37,8 +43,15 @@ export const AttractionModal: React.FC<AttractionModalProps> = ({
               {attraction.name}
             </h2>
             <div className="flex gap-2">
-              <button className="p-2 bg-gray-100 rounded-full">
-                <Heart className="w-6 h-6 text-red-500" />
+              <button
+                onClick={handleLikeToggle}
+                className="p-2 bg-gray-100 rounded-full"
+              >
+                <Heart
+                  className="w-6 h-6"
+                  fill={isLiked ? "red" : "none"} // 좋아요 상태에 따라 채움
+                  stroke={isLiked ? "none" : "gray"} // 회색 테두리 상태
+                />
               </button>
               {attraction.mapUrl ? (
                 <button

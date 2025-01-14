@@ -1,6 +1,6 @@
-import React from 'react';
-import { Heart } from 'lucide-react';
-import { Attraction } from '../types';
+import React, { useState } from "react";
+import { Heart } from "lucide-react";
+import { Attraction } from "../types";
 
 interface AttractionCardProps {
   attraction: Attraction;
@@ -11,6 +11,13 @@ export const AttractionCard: React.FC<AttractionCardProps> = ({
   attraction,
   onClick,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeToggle = (e: React.MouseEvent) => {
+    e.stopPropagation(); // 부모의 클릭 이벤트 방지
+    setIsLiked((prev) => !prev);
+  };
+
   return (
     <div
       onClick={onClick}
@@ -22,8 +29,15 @@ export const AttractionCard: React.FC<AttractionCardProps> = ({
           alt={attraction.name}
           className="w-full h-full object-cover"
         />
-        <button className="absolute top-2 right-2 p-1.5 bg-white/80 rounded-full">
-          <Heart className="w-4 h-4 text-red-500" />
+        <button
+          onClick={handleLikeToggle}
+          className="absolute top-2 right-2 p-1.5 bg-white/80 rounded-full"
+        >
+          <Heart
+            className="w-4 h-4"
+            fill={isLiked ? "red" : "none"} // 좋아요 상태에 따라 채움
+            stroke={isLiked ? "none" : "gray"} // 회색 테두리 상태
+          />
         </button>
       </div>
       <div className="p-3">

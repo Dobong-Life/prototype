@@ -15,6 +15,7 @@ export const AttractionReviews: React.FC<AttractionReviewsProps> = ({
   onBack,
 }) => {
   const [showWriteReview, setShowWriteReview] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
   const filteredReviews = reviews.filter(
     (r) => r.attractionId === attraction.id
   );
@@ -24,9 +25,20 @@ export const AttractionReviews: React.FC<AttractionReviewsProps> = ({
     tags: string[];
     image?: File;
   }) => {
-    // 리뷰 저장 로직 (백엔드로 보낼 경우)
     console.log("New review:", review);
     setShowWriteReview(false);
+  };
+
+  const handleLikeToggle = () => {
+    setIsLiked((prev) => !prev);
+  };
+
+  const handleMapClick = () => {
+    if (attraction.mapUrl) {
+      window.open(attraction.mapUrl, "_blank");
+    } else {
+      alert("지도 정보가 등록되지 않았습니다.");
+    }
   };
 
   return (
@@ -61,24 +73,22 @@ export const AttractionReviews: React.FC<AttractionReviewsProps> = ({
                 {attraction.name}
               </h2>
               <div className="flex gap-2">
-                <button className="p-2 bg-gray-100 rounded-full">
-                  <Heart className="w-6 h-6 text-red-500" />
+                <button
+                  onClick={handleLikeToggle}
+                  className="p-2 bg-gray-100 rounded-full"
+                >
+                  <Heart
+                    className="w-6 h-6"
+                    fill={isLiked ? "red" : "none"} // 좋아요 상태에 따라 채움
+                    stroke={isLiked ? "none" : "gray"} // 회색 테두리 상태
+                  />
                 </button>
-                {attraction.mapUrl ? (
-                  <button
-                    className="p-2 bg-gray-100 rounded-full"
-                    onClick={() => window.open(attraction.mapUrl, "_blank")}
-                  >
-                    <Map className="w-6 h-6 text-blue-500" />
-                  </button>
-                ) : (
-                  <button
-                    className="p-2 bg-gray-100 rounded-full"
-                    onClick={() => alert("지도 정보가 등록되지 않았습니다.")}
-                  >
-                    <Map className="w-6 h-6 text-gray-500" />
-                  </button>
-                )}
+                <button
+                  onClick={handleMapClick}
+                  className="p-2 bg-gray-100 rounded-full"
+                >
+                  <Map className="w-6 h-6 text-blue-500" />
+                </button>
               </div>
             </div>
 
