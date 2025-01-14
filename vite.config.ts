@@ -7,6 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  // GitHub Pages용 base 설정 추가
-  base: '/prototype/', // 저장소 이름으로 설정
+  // base 설정 제거 (Netlify는 기본적으로 루트 경로에 배포됨)
 });
