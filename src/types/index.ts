@@ -43,6 +43,13 @@ export interface Business {
   mapUrl?: string;
 }
 
+export interface Coupon {
+  id: string;
+  title: string;
+  description: string;
+  discount: string;
+  validUntil: string;
+}
 
 export interface Review {
   id: string;

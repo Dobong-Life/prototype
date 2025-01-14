@@ -1,4 +1,4 @@
-import { Restaurant, Review, Tag, Attraction, Business } from '../types';
+import { Restaurant, Review, Tag, Attraction, Business, Coupon } from '../types';
 
 export const restaurants: Restaurant[] = [
   {
@@ -1352,4 +1352,28 @@ export const popularTags: Tag[] = [
     category: '서비스',
     count: 95
   }
+];
+
+export const coupons: Coupon[] = [
+  {
+    id: "1",
+    title: "10% 할인 쿠폰",
+    description: "도봉구 상공회 회원사 대상",
+    discount: "10%",
+    validUntil: "2024-12-31",
+  },
+  {
+    id: "2",
+    title: "무료 음료 쿠폰",
+    description: "우정 흑염소 오리전문점에서 제공",
+    discount: "무료 음료",
+    validUntil: "2024-11-30",
+  },
+  {
+    id: "3",
+    title: "5% 추가 할인",
+    description: "린나이 대리점 가전제품 구매 시",
+    discount: "5%",
+    validUntil: "2024-10-15",
+  },
 ];
