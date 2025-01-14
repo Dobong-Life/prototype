@@ -31,6 +31,14 @@ export const RestaurantReviews: React.FC<RestaurantReviewsProps> = ({
     setIsLiked((prev) => !prev);
   };
 
+  const handleMapClick = () => {
+    if (restaurant.mapUrl) {
+      window.open(restaurant.mapUrl, "_blank");
+    } else {
+      alert("지도 정보가 등록되지 않았습니다.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-[390px] mx-auto bg-white min-h-screen">
@@ -73,7 +81,10 @@ export const RestaurantReviews: React.FC<RestaurantReviewsProps> = ({
                     stroke={isLiked ? "none" : "gray"}
                   />
                 </button>
-                <button className="p-2 bg-gray-100 rounded-full">
+                <button
+                  onClick={handleMapClick}
+                  className="p-2 bg-gray-100 rounded-full"
+                >
                   <Map className="w-6 h-6 text-blue-500" />
                 </button>
               </div>
