@@ -551,7 +551,7 @@ export const businesses: Business[] = [
     addressDong: "창동",
     mainItem: ["가전제품 판매"],
     likes: 50,
-    imageUrl: "https://i.ibb.co/Z6GDTRN/image.jpg",
+    imageUrl: "https://i.ibb.co/w4fddvw/image.jpg",
     mapUrl: "https://m.place.naver.com/place/12904954/home",
   },
   {
