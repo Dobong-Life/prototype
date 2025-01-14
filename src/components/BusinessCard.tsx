@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heart } from "lucide-react";
 import { Business } from "../types";
 
@@ -11,6 +11,13 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
   business,
   onClick,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeToggle = (e: React.MouseEvent) => {
+    e.stopPropagation(); // 부모 클릭 이벤트 방지
+    setIsLiked((prev) => !prev);
+  };
+
   return (
     <div
       onClick={onClick}
@@ -22,8 +29,15 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
           alt={business.name}
           className="w-full h-full object-cover"
         />
-        <button className="absolute top-2 right-2 p-1.5 bg-white/80 rounded-full">
-          <Heart className="w-4 h-4 text-red-500" />
+        <button
+          onClick={handleLikeToggle}
+          className="absolute top-2 right-2 p-1.5 bg-white/80 rounded-full"
+        >
+          <Heart
+            className="w-4 h-4"
+            fill={isLiked ? "red" : "none"} // 좋아요일 때 빨간색으로 채움
+            stroke={isLiked ? "none" : "gray"} // 좋아요 아닐 때 회색 테두리
+          />
         </button>
       </div>
       <div className="p-3">
